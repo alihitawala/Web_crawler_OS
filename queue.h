@@ -5,6 +5,7 @@
 #ifndef P4A_QUEUE_H
 #define P4A_QUEUE_H
 typedef struct __node_t {
+    char* parent;
     char* value;
     struct __node_t *next;
 } node_t;
@@ -20,8 +21,8 @@ typedef struct __queue_t {
 } queue_t;
 
 void Queue_Init(queue_t *q, int length);
-void Queue_Enqueue(queue_t *q, char* value);
-int Queue_Dequeue(queue_t *q, char* value);
+void Queue_Enqueue(queue_t *q, char* value, char* parent);
+int Queue_Dequeue(queue_t *q, char** value, char** parent);
 int Queue_IsEmpty(queue_t *q);
 int Queue_IsFull(queue_t *q);
 
