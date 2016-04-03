@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Makefile" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pagea.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crawler.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/web_tester.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crawler.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/file_tester.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/client.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/README.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cs537.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pagee" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/paged" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pageb" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pagea" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cs537.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pagec" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.4.7/include" />
+          <root url="file:///usr/local/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.4.7/include" />
+          <root url="file:///usr/local/include" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
