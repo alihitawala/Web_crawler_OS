@@ -1,0 +1,682 @@
+[alihitawala@king-10] (1)$ make
+make: Nothing to be done for `all'.
+[alihitawala@king-10] (2)$ ./file_tester pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: (null)
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Page received from parent :: pagea
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+pagea -> pageb
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagec, parent pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+PARSER:: Page received from parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pagea -> pagec
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+pageb -> paged
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagee, parent pageb
+PARSER:: Page received from parent :: pagec
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+pageb -> pagee
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagee, parent pagec
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pagec
+DOWNLOADER:: Signalled link queue empty 
+pagec -> pagee
+PARSER:: Page received from parent :: paged
+PARSER:: length of links 0 
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagea, parent pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+pagee -> pagea
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: pagea
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+pagea -> pageb
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagec, parent pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Page received from parent :: pagea
+pagea -> pagec
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+DOWNLOADER:: About to dequeue
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagec, parent pagea
+pagea -> pagec
+PARSER:: Page received from parent :: pageb
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+DOWNLOADER:: About to dequeue
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagee, parent pageb
+PARSER:: Page received from parent :: pagec
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pageb -> paged
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pageb -> pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pagec
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagee, parent pagec
+pagec -> pagee
+PARSER:: Page received from parent :: pageb
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pageb -> paged
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagee, parent pageb
+PARSER:: Page received from parent :: pagec
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pageb -> pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pagec
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagee, parent pagec
+PARSER:: Page received from parent :: paged
+pagec -> pagee
+PARSER:: length of links 0 
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: paged
+PARSER:: length of links 0 
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+pagee -> pagea
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+pagea -> pageb
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagec, parent pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+pagea -> pagec
+PARSER:: Page received from parent :: pagea
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+pagea -> pageb
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+pagea -> pagec
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+pagea -> pageb
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+pagea -> pagec
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pageb
+pagea -> pagec
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pageb -> paged
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagee, parent pageb
+PARSER:: Page received from parent :: pagec
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pageb -> pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pagec
+DOWNLOADER:: Signalled link queue empty 
+pagec -> pagee
+PARSER:: Enqueueing Link pagee, parent pagec
+PARSER:: Page received from parent :: pageb
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagee, parent pageb
+PARSER:: Page received from parent :: pagec
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pageb -> paged
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagee, parent pagec
+PARSER:: Page received from parent :: pageb
+pageb -> pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pagec
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pagec -> pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pageb -> paged
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagee, parent pageb
+PARSER:: Page received from parent :: pagec
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pageb -> pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pagec
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagee, parent pagec
+PARSER:: Page received from parent :: pageb
+pagec -> pagee
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pageb -> paged
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagee, parent pageb
+pageb -> pagee
+PARSER:: Page received from parent :: pagec
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagee, parent pagec
+PARSER:: Page received from parent :: paged
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pagec
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: length of links 0 
+PARSER:: Page received from parent :: pagee
+pagec -> pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagea, parent pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: paged
+PARSER:: length of links 0 
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: paged
+PARSER:: length of links 0 
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: paged
+PARSER:: length of links 0 
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagea, parent pagee
+PARSER:: Page received from parent :: pagee
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagee -> pagea
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagea, parent :: pagee
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagea, parent pagee
+pagee -> pagea
+PARSER:: Page received from parent :: pagea
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pagea
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagea -> pagec
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pagea
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+pagea -> pagec
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pagea
+pagea -> pagec
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pagea
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pagea -> pagec
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagec, parent pagea
+pagea -> pagec
+PARSER:: Page received from parent :: pagea
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pagea
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagea -> pagec
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pagea
+pagea -> pagec
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pageb, parent pagea
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pageb, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pagea -> pageb
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagec, parent :: pagea
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagec, parent pagea
+PARSER:: Page received from parent :: pageb
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pagea -> pagec
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+pageb -> paged
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagee, parent pageb
+PARSER:: Page received from parent :: pagec
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+pageb -> pagee
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagee, parent pagec
+PARSER:: Page received from parent :: pageb
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pagec
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pagec -> pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link pagee, parent pageb
+PARSER:: Page received from parent :: pagec
+PARSER:: length of links 1 
+QUEUE:: max length : 1, current length : 1
+PARSER:: Link queue full 
+pageb -> paged
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+pageb -> pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: pagee, parent :: pagec
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Enqueueing Link pagee, parent pagec
+PARSER:: Page received from parent :: pageb
+PARSER:: length of links 2 
+QUEUE:: max length : 1, current length : 0
+PARSER:: Link queue not full 
+PARSER:: Enqueueing Link paged, parent pageb
+QUEUE:: max length : 1, current length : 1
+pagec -> pagee
+DOWNLOADER:: About to dequeue
+DOWNLOADER:: Link received :: paged, parent :: pageb
+DOWNLOADER:: Signalled link queue empty 
+PARSER:: Link queue full 
+pageb -> paged

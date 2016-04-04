@@ -12,7 +12,7 @@
 #include "queue.h"
 
 
-void Queue_Init(queue_t *, int length) {
+void Queue_Init(queue_t *q, int length) {
     node_t *tmp = malloc(sizeof(node_t));
     tmp->next = NULL;
     q->head = q->tail = tmp;
@@ -55,12 +55,15 @@ int Queue_Dequeue(queue_t *q, char** value, char** parent) {
 
 int Queue_IsEmpty(queue_t *q) {
     pthread_mutex_lock(&q->headLock);
+    pthread_mutex_lock(&q->tailLock);
     node_t *tmp = q->head;
     node_t *newHead = tmp->next;
     if (newHead == NULL) {
+        pthread_mutex_unlock(&q->tailLock);
         pthread_mutex_unlock(&q->headLock);
         return 1; // queue was empty
     }
+    pthread_mutex_unlock(&q->tailLock);
     pthread_mutex_unlock(&q->headLock);
     return 0;
 }
@@ -68,6 +71,7 @@ int Queue_IsEmpty(queue_t *q) {
 int Queue_IsFull(queue_t *q) {
     pthread_mutex_lock(&q->headLock);
     pthread_mutex_lock(&q->tailLock);
+    printf("QUEUE:: max length : %d, current length : %d\n", q->max_length, q->current_length);
     if (q->max_length == q->current_length) {
         pthread_mutex_unlock(&q->tailLock);
         pthread_mutex_unlock(&q->headLock);
