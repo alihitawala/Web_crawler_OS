@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <pthread.h>
 #include "queue.h"
+#include "hashtable.h"
 typedef struct __functions {
     char * (*_fetch_fn)(char *url);
     void (*_edge_fn)(char *from, char *to);
@@ -14,6 +15,7 @@ typedef struct __functions {
 char** get_links(char* page, int* count);
 queue_t* link_q;
 queue_t* page_q;
+hashtable_t *hashtable;
 pthread_mutex_t download_mutex, parser_mutex, mutex;
 pthread_cond_t link_q_fill;
 pthread_cond_t link_q_empty;
@@ -28,23 +30,25 @@ void *download_worker(void* func) {
         while (Queue_IsEmpty(link_q)) //todo FATAL premeption after this line
             pthread_cond_wait(&link_q_fill, &mutex);
         char* link, *parent;
-        printf("DOWNLOADER:: About to dequeue\n");
+        //printf("DOWNLOADER:: About to dequeue\n");
         Queue_Dequeue(link_q, &link, &parent);
-        printf("DOWNLOADER:: Link received :: %s, parent :: %s\n", link, parent);
+        //printf("DOWNLOADER:: Link received :: %s, parent :: %s\n", link, parent);
         pthread_cond_signal(&link_q_empty);
-        printf("DOWNLOADER:: Signalled link queue empty \n");
+        //printf("DOWNLOADER:: Signalled link queue empty \n");
+        pthread_mutex_unlock(&mutex);
         char *page = functions->_fetch_fn(link);
         if (page != NULL) {
+            printf("Page :: %s \n %s", link, page);
             if (parent != NULL)
                 functions->_edge_fn(parent, link);
             Queue_Enqueue(page_q, page, link);
             pthread_cond_signal(&page_q_fill);
         }
-        pthread_mutex_unlock(&mutex);
+        //todo remove these
         if (i == 100)
             break;
     }
-    printf("DOWNLOADER:: EXIT \n");
+    //printf("DOWNLOADER:: EXIT \n");
     pthread_exit(NULL);
 }
 
@@ -59,26 +63,32 @@ void *parser_worker() {
             pthread_cond_wait(&page_q_fill, &mutex);
         char* page, *parent;
         Queue_Dequeue(page_q, &page, &parent);
-        printf("PARSER:: Page received from parent :: %s\n", parent);
+        //printf("PARSER:: Page received from parent :: %s\n", parent);
         //get links from page and enq
         char** links = get_links(page, &len);
-        printf("PARSER:: length of links %d \n", len);
+        //printf("PARSER:: length of links %d \n", len);
         for(j=0;j<len;j++) {
+            char* link = links[j];
+            if (ht_get(hashtable, link) != NULL)
+                continue;
+            else
+                ht_set(hashtable, link, link);
             while (Queue_IsFull(link_q)) {
-                printf("PARSER:: Link queue full \n");
+                //printf("PARSER:: Link queue full \n");
                 pthread_cond_wait(&link_q_empty, &mutex);
             }
-            printf("PARSER:: Link queue not full \n");
-            Queue_Enqueue(link_q, links[j], parent);
+            //printf("PARSER:: Link queue not full \n");
+            Queue_Enqueue(link_q, link, parent);
             pthread_cond_signal(&link_q_fill);
-            printf("PARSER:: Enqueueing Link %s, parent %s\n", links[j], parent);
+            //printf("PARSER:: Enqueueing Link %s, parent %s\n", link, parent);
         }
         free(page);
         pthread_mutex_unlock(&mutex);
+        //todo remove these
         if (i == 100)
             break;
     }
-    printf("PARSER:: EXIT \n");
+    //printf("PARSER:: EXIT \n");
     pthread_exit(NULL);
 }
 
@@ -132,8 +142,10 @@ int crawl(char *start_url,
     funct->_fetch_fn = _fetch_fn;
     funct->_edge_fn = _edge_fn;
     //queues
-    link_q = (queue_t*) malloc(sizeof(queue_t));
-    page_q = (queue_t*) malloc(sizeof(queue_t));
+    link_q = (queue_t *) malloc(sizeof(queue_t));
+    page_q = (queue_t *) malloc(sizeof(queue_t));
+    hashtable = ht_create(65536);
+    ht_set(hashtable, start_url, start_url);
     Queue_Init(link_q, queue_size);
     Queue_Init(page_q, -1);
     Queue_Enqueue(link_q, start_url, NULL);

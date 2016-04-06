@@ -71,7 +71,7 @@ int Queue_IsEmpty(queue_t *q) {
 int Queue_IsFull(queue_t *q) {
     pthread_mutex_lock(&q->headLock);
     pthread_mutex_lock(&q->tailLock);
-    printf("QUEUE:: max length : %d, current length : %d\n", q->max_length, q->current_length);
+    //printf("QUEUE:: max length : %d, current length : %d\n", q->max_length, q->current_length);
     if (q->max_length == q->current_length) {
         pthread_mutex_unlock(&q->tailLock);
         pthread_mutex_unlock(&q->headLock);
